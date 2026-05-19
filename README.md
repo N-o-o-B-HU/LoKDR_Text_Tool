@@ -130,7 +130,7 @@ It does not:
 
 ## Restore original files
 
-To restore the original game files, use Steam / GOG file verification, or restore your own backup of:
+To restore the original game files, use Steam file verification, or restore your own backup of:
 
 - `bigfile.x64.dat`
 

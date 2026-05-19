@@ -1,0 +1,36 @@
+name: Build Windows EXE
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install PyInstaller
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pyinstaller==6.16.0
+
+      - name: Build EXE
+        run: |
+          python -m PyInstaller --onefile --console --clean --noupx --name "LoKDR_Text_Tool_(NooB)" --icon "pic.ico" --version-file "version_info.txt" --distpath "dist" --workpath "build" --specpath "." "LoK_Defiance_HU_Patch_Installer.py"
+
+      - name: Upload EXE artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: LoKDR_Text_Tool_NooB_EXE
+          path: dist/LoKDR_Text_Tool_(NooB).exe

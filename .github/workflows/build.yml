@@ -33,13 +33,13 @@ jobs:
             --console `
             --clean `
             --noupx `
-            --name "LoKDR_Text_Tool_(NooB)" `
+            --name "LoKDR_Text_Tool_NooB" `
             --icon "pic.ico" `
             --version-file "version_info.txt" `
             --distpath "dist" `
             --workpath "build" `
             --specpath "." `
-            "LoKDR_Text_Tool_(NooB).py"
+            "LoKDR_Text_Tool_NooB.py"
 
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4

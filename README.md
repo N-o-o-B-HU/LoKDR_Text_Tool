@@ -14,7 +14,7 @@ You must own a legitimate copy of **Legacy of Kain: Defiance Remastered**.
 
 A release package may contain:
 
-- `LoKDR_Text_Tool_(NooB).exe`
+- `LoKDR_Text_Tool_NooB.exe`
 - `Defiance_PCEnglish_TRANSLATE.txt` optional - only if a ready-made translation is being distributed
 
 ## Game files
@@ -45,7 +45,7 @@ Use this mode if you want to create or update a translation file.
 
 2. Copy this file into the same folder as `bigfile.x64.dat`:
 
-   - `LoKDR_Text_Tool_(NooB).exe`
+   - `LoKDR_Text_Tool_NooB.exe`
 
 3. Make sure this file does **not** already exist in the same folder:
 
@@ -54,7 +54,7 @@ Use this mode if you want to create or update a translation file.
 4. Run:
 
    ```
-   LoKDR_Text_Tool_(NooB).exe
+   LoKDR_Text_Tool_NooB.exe
    ```
 
 5. The tool will create:
@@ -80,19 +80,19 @@ Use this mode if you already have a translated TXT file and want to apply it to 
 
 2. Copy these files into the same folder as `bigfile.x64.dat`:
 
-   - `LoKDR_Text_Tool_(NooB).exe`
+   - `LoKDR_Text_Tool_NooB.exe`
    - `Defiance_PCEnglish_TRANSLATE.txt`
 
 3. Make sure these files are in the same folder:
 
    - `bigfile.x64.dat`
-   - `LoKDR_Text_Tool_(NooB).exe`
+   - `LoKDR_Text_Tool_NooB.exe`
    - `Defiance_PCEnglish_TRANSLATE.txt`
 
 4. Run:
 
    ```
-   LoKDR_Text_Tool_(NooB).exe
+   LoKDR_Text_Tool_NooB.exe
    ```
 
 5. Wait until the process finishes.

@@ -27,7 +27,7 @@ jobs:
 
       - name: Build EXE
         run: |
-          python -m PyInstaller --onefile --console --clean --noupx --name "LoKDR_Text_Tool_(NooB)" --icon "pic.ico" --version-file "version_info.txt" --distpath "dist" --workpath "build" --specpath "." "LoK_Defiance_HU_Patch_Installer.py"
+          python -m PyInstaller --onefile --console --clean --noupx --name "LoKDR_Text_Tool_(NooB)" --icon "pic.ico" --version-file "version_info.txt" --distpath "dist" --workpath "build" --specpath "." "LoKDR_Text_Tool_(NooB).py"
 
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4

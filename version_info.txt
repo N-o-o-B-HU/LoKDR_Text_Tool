@@ -17,14 +17,14 @@ VSVersionInfo(
           StringStruct('CompanyName', 'N o o B'),
           StringStruct('FileDescription', 'Legacy of Kain Defiance Remastered Text Editor Tool'),
           StringStruct('FileVersion', '1.0.0.0'),
-          StringStruct('InternalName', 'LoKDR_Text_Tool_(NooB)'),
+          StringStruct('InternalName', 'LoKDR_Text_Tool_NooB'),
           StringStruct('OriginalFilename', 'LoKDR_Text_Tool_(NooB).exe'),
-          StringStruct('ProductName', 'Legacy of Kain Defiance Text Editor Tool'),
+          StringStruct('ProductName', 'LoKDR Text Tool'),
           StringStruct('ProductVersion', '1.0.0.0'),
           StringStruct('LegalCopyright', 'Copyright (C) N o o B')
         ]
       )
     ]),
-    VarFileInfo([VarStruct('TextEditor', [1033, 1200])])
+    VarFileInfo([VarStruct('Translation', [1033, 1200])])
   ]
 )

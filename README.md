@@ -1,7 +1,3 @@
-# LoKDR_Text_Tool_(NooB)
-Text editor tool for the fan translations of Legacy of Kain: Defiance Remastered. No copyrighted game files are included.
-
-
 # Legacy of Kain: Defiance Remastered - Text Editor Tool
 
 Text editor tool for fan translations of **Legacy of Kain: Defiance Remastered**.

@@ -968,15 +968,32 @@ def find_archives(base:Path) -> Tuple[Optional[Archive],Optional[Archive]]:
     if hd: print(f'[OK] bigfilehd.dat: records={hd.count}, mode={"64-bit" if hd.mode64 else "32-bit"}')
     return x64,hd
 
+def get_app_dir() -> Path:
+    # Normal .py execution: use the folder that contains this script.
+    # PyInstaller --onefile execution: __file__ points to a temporary
+    # extraction folder, so use sys.executable to get the real EXE folder.
+    if getattr(sys, "frozen", False):
+        return Path(sys.executable).resolve().parent
+    return Path(__file__).resolve().parent
+
+
 def main():
-    base=Path(__file__).resolve().parent
-    mode = 'Install' if (base/TXT_NAME).exists() else 'Export'
+    base = get_app_dir()
+
+    # Make relative file operations behave the same in .py and .exe mode.
+    try:
+        os.chdir(base)
+    except Exception:
+        pass
+
+    txt_path = base / TXT_NAME
+    mode = 'Install' if txt_path.exists() else 'Export'
     ui_header(mode)
     ui_progress(0, 'Checking files')
     x64,hd=find_archives(base)
     if not x64 and not hd:
-        raise RuntimeError('Could not find bigfile.x64.dat or bigfilehd.dat next to this installer.')
-    if (base/TXT_NAME).exists():
+        raise RuntimeError('Could not find bigfile.x64.dat or bigfilehd.dat next to this tool.')
+    if txt_path.exists():
         import_to_archives(base,x64,hd)
     else:
         ui_progress(10, 'Exporting translation template')
@@ -989,7 +1006,7 @@ if __name__ == '__main__':
     try:
         code=main()
     except Exception as exc:
-        _builtins.print('\n\nInstallation failed.')
+        _builtins.print('\n\nOperation failed.')
         _builtins.print(str(exc))
         code=1
     raise SystemExit(pause_exit(code))
